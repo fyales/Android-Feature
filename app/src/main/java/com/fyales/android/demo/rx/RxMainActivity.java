@@ -25,7 +25,8 @@ public class RxMainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         String[] functions = new String[]{
-                "简单实例"
+                "简单实例",
+                "变换，线程切换实例"
         };
 
         rxMainLv.setAdapter(new ArrayAdapter<>(this,
@@ -40,6 +41,7 @@ public class RxMainActivity extends AppCompatActivity {
                         startActivity(new Intent(RxMainActivity.this,SimpleRxActivity.class));
                         break;
                     case 1:
+                        startActivity(new Intent(RxMainActivity.this,LiftActivity.class));
                         break;
                     case 2:
                         break;

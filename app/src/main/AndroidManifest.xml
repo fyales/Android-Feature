@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".rx.RxMainActivity" />
-        <activity android:name=".rx.SimpleRxActivity"></activity>
+        <activity android:name=".rx.SimpleRxActivity" />
+        <activity android:name=".rx.LiftActivity"></activity>
     </application>
 
 </manifest>
