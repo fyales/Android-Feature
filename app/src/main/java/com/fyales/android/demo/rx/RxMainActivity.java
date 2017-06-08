@@ -1,4 +1,4 @@
-package com.fyales.android.demo;
+package com.fyales.android.demo.rx;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,36 +8,36 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.fyales.android.demo.rx.RxMainActivity;
+import com.fyales.android.demo.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class RxMainActivity extends AppCompatActivity {
 
-    @BindView(R.id.main_lv)
-    ListView mainLv;
+    @BindView(R.id.rx_main_lv)
+    ListView rxMainLv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_rx_main);
         ButterKnife.bind(this);
 
         String[] functions = new String[]{
-                "RxJava"
+                "简单实例"
         };
 
-        mainLv.setAdapter(new ArrayAdapter<>(this,
+        rxMainLv.setAdapter(new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1,
                 functions));
 
-        mainLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        rxMainLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0:
-                        startActivity(new Intent(MainActivity.this, RxMainActivity.class));
+                        startActivity(new Intent(RxMainActivity.this,SimpleRxActivity.class));
                         break;
                     case 1:
                         break;
@@ -47,7 +47,5 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-
     }
 }
