@@ -17,7 +17,9 @@
         </activity>
         <activity android:name=".rx.RxMainActivity" />
         <activity android:name=".rx.SimpleRxActivity" />
-        <activity android:name=".rx.LiftActivity"></activity>
+        <activity android:name=".rx.LiftActivity" />
+        <activity android:name=".rx.RxBusObservableActivity" />
+        <activity android:name=".rx.RxBusObserverActivity"></activity>
     </application>
 
 </manifest>

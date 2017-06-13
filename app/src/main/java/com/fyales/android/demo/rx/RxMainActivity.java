@@ -26,7 +26,8 @@ public class RxMainActivity extends AppCompatActivity {
 
         String[] functions = new String[]{
                 "简单实例",
-                "变换，线程切换实例"
+                "变换，线程切换实例",
+                "RxBus实例"
         };
 
         rxMainLv.setAdapter(new ArrayAdapter<>(this,
@@ -44,6 +45,7 @@ public class RxMainActivity extends AppCompatActivity {
                         startActivity(new Intent(RxMainActivity.this,LiftActivity.class));
                         break;
                     case 2:
+                        startActivity(new Intent(RxMainActivity.this,RxBusObserverActivity.class));
                         break;
                     default:
                 }
