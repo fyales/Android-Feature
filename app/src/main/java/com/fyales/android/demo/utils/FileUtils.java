@@ -46,7 +46,7 @@ public class FileUtils {
         File file = new File(fileName);
         File parentFile = file.getParentFile();
         if (!parentFile.exists()) {
-            parentFile.mkdirs();
+            parentFile.mkdir();
         }
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(file));

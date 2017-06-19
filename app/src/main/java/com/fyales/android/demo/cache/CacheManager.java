@@ -86,7 +86,7 @@ public class CacheManager<T> {
                 .doOnNext(new Action1<T>() {
                     @Override
                     public void call(T t) {
-                        if (null != t && mDiskCache != null) {
+                        if (null != t) {
                             mDiskCache.put(key, t);
                             mMemoryCache.put(key, t);
                         }

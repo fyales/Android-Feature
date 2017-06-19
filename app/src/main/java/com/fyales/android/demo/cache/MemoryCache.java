@@ -8,7 +8,6 @@ import com.google.gson.Gson;
 
 import java.io.UnsupportedEncodingException;
 
-import rx.Emitter;
 import rx.Observable;
 import rx.Subscriber;
 
@@ -53,12 +52,14 @@ public class MemoryCache<T> implements ICache<T>{
 
                 if (TextUtils.isEmpty(result)){
                     subscriber.onNext(null);
+                } else{
+                    T t = new Gson().fromJson(result,cls);
+                    subscriber.onNext(t);
                 }
-
-                subscriber.onNext(new Gson().fromJson(result,cls));
+                subscriber.onCompleted();
 
             }
-        }, Emitter.BackpressureMode.BUFFER);
+        });
     }
 
     @Override

@@ -14,4 +14,8 @@ public class GirlModel {
     public boolean error;
     public List<Girl> results;
 
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
+    }
 }

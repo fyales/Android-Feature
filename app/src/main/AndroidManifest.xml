@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fyales.android.demo">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,7 +22,9 @@
         <activity android:name=".rx.SimpleRxActivity" />
         <activity android:name=".rx.LiftActivity" />
         <activity android:name=".rx.RxBusObservableActivity" />
-        <activity android:name=".rx.RxBusObserverActivity"></activity>
+        <activity android:name=".rx.RxBusObserverActivity" />
+        <activity android:name=".rx.RxCacheActivity" />
+        <activity android:name=".rx.ImageDetailActivity"></activity>
     </application>
 
 </manifest>

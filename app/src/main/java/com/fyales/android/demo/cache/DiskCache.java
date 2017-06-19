@@ -40,10 +40,11 @@ public class DiskCache<T> implements ICache<T> {
                 }
                 if (TextUtils.isEmpty(result)) {
                     subscriber.onNext(null);
+                } else{
+                    T t = new Gson().fromJson(result, cls);
+                    subscriber.onNext(t);
                 }
 
-                T t = new Gson().fromJson(result, cls);
-                subscriber.onNext(t);
                 subscriber.onCompleted();
             }
         })
