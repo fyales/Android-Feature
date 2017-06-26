@@ -12,6 +12,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import rx.Observable;
+import rx.Producer;
+import rx.Single;
+import rx.SingleSubscriber;
 import rx.Subscriber;
 import rx.functions.Action0;
 import rx.functions.Action1;
@@ -52,6 +55,7 @@ public class SimpleRxActivity extends AppCompatActivity {
             }
         };
 
+
         //被观察者
         Observable simpleObservable = Observable.create(new Observable.OnSubscribe<String>() {
             @Override
@@ -59,6 +63,19 @@ public class SimpleRxActivity extends AppCompatActivity {
                 subscriber.onNext("Hello Rx");
                 subscriber.onNext("Hi Rx");
                 subscriber.onCompleted();
+            }
+        });
+
+        //Single
+        Single.create(new Single.OnSubscribe<String>() {
+            @Override
+            public void call(SingleSubscriber<? super String> singleSubscriber) {
+                singleSubscriber.onSuccess("hello");
+            }
+        }).subscribe(new Action1<String>() {
+            @Override
+            public void call(String s) {
+                Log.i("rx","Single:The value is " + s);
             }
         });
 

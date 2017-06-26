@@ -36,7 +36,8 @@ public class MainBoard {
     }
 
     public Observable getObsevable(){
-        return subject;
+//        return subject;
+        return subject.startWith(mKey);
     }
 
     public void notifyDataChanged(String key){
